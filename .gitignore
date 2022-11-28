@@ -162,3 +162,9 @@ Temporary Items
 
 # local files
 *.local.*
+
+# fichiers d'environnement qui possedent potentiellement des secrets
+*.env
+
+# repertoire des fichiers originaux 
+openshift/origine/*
