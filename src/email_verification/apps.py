@@ -24,6 +24,8 @@ class EmailVerificationConfig(AppConfig):
         except ProgrammingError:
             return
 
+        cache.set("credential_definition_id", "8WDp23WFnJPUDjd77khhAG:3:CL:28887:verified-email", None)
+
         if cache.get("credential_definition_id") is None:
             schema_body = {
                 "schema_name": "verified-email",
