@@ -170,3 +170,5 @@ Temporary Items
 openshift/origine/*
 openshift/templates/postgresql/build.sh
 openshift/templates/postgresql/notas.md
+
+*.http
