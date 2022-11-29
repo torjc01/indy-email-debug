@@ -1,0 +1,1 @@
+oc process -f email-verification-agent-deploy.yaml --param-file=email-verification-agent-deploy.param.env | oc apply -f -

@@ -185,7 +185,7 @@ objects:
         env: ${TAG_NAME}
     spec:
       accessModes:
-        - ReadWriteMany
+        - ReadWriteOnce
       resources:
         requests:
           storage: ${PERSISTENT_VOLUME_SIZE}
@@ -290,10 +290,10 @@ objects:
                 - name: ACAPY_WEBHOOK_URL
                   value: ${WEBHOOK_URL}
                 - name: ACAPY_LABEL
-                  value: ${DISPLAY_LABEL}
+                  value: ${ACAPY_LABEL}
                 - name: ACAPY_READ_ONLY_LEDGER
                   value: ${AGENT_READ_ONLY_LEDGER}
-              image: " "
+              image: "bcgovimages/aries-cloudagent:py36-1.16-1_0.7.3"
               ports:
                 - containerPort: ${{INDY_ADMIN_PORT}}
                   protocol: TCP
@@ -333,18 +333,6 @@ objects:
             - name: ${NAME}${SUFFIX}-data
               persistentVolumeClaim:
                 claimName: ${NAME}${SUFFIX}
-      triggers:
-        - type: ConfigChange
-        - type: ImageChange
-          imageChangeParams:
-            automatic: true
-            containerNames:
-              - ${NAME}${SUFFIX}
-            from:
-              kind: ImageStreamTag
-              name: ${NAME}:${TAG_NAME}
-              namespace: ${IMAGE_NAMESPACE}
-
 parameters:
   - name: NAME
     displayName: Name
@@ -453,7 +441,7 @@ parameters:
     description: The URL from which the genesis file can be downloaded.
     required: true
     value: https://raw.githubusercontent.com/sovrin-foundation/sovrin/stable/sovrin/pool_transactions_sandbox_genesis
-  - name: DISPLAY_LABEL
+  - name: ACAPY_LABEL
     displayName: Display Label
     description: Display label
     required: true
@@ -493,3 +481,9 @@ parameters:
     description: The resources Memory limit (in Mi, Gi, etc) for this build.
     required: true
     value: 1Gi
+# ====================================================================================
+  - name: ROUTE_TIMEOUT
+    displayName: Route Timeout
+    description: The timeout for the application route.  When this timeout is exceeded the application's route will respond with a 504 Gateway Timeout error.
+    required: true
+    value: 120s
