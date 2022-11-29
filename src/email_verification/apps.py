@@ -26,12 +26,16 @@ class EmailVerificationConfig(AppConfig):
 
         # cache.set("credential_definition_id", "8WDp23WFnJPUDjd77khhAG:3:CL:28965:verified-email", None)
 
+        logger.info(f"adresse agent: {AGENT_URL}")
+        logger.info(f"api-key: {API_KEY}")
+        
         if cache.get("credential_definition_id") is None:
             schema_body = {
                 "schema_name": "verified-email",
                 "schema_version": "1.2.4",
-                "attributes": ["email", "time"],
+                "attributes": ["email", "time"]
             }
+
             schema_response = requests.post(f"{AGENT_URL}/schemas", headers={"x-api-key": API_KEY}, json=schema_body)
 
             logger.info(schema_response.text)
