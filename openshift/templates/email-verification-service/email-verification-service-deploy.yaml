@@ -338,3 +338,7 @@ parameters:
   displayName: Agent API key for admin site 
   description: The key for the agent's admin endpoint.
   required: true
+- name: CRED_DEF_ID
+  displayName: Credential definition ID 
+  description: The credential reference deployed dans la blockchain.
+  required: true
