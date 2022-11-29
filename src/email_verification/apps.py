@@ -24,12 +24,12 @@ class EmailVerificationConfig(AppConfig):
         except ProgrammingError:
             return
 
-        cache.set("credential_definition_id", "8WDp23WFnJPUDjd77khhAG:3:CL:28965:verified-email", None)
+        # cache.set("credential_definition_id", "8WDp23WFnJPUDjd77khhAG:3:CL:28965:verified-email", None)
 
         if cache.get("credential_definition_id") is None:
             schema_body = {
                 "schema_name": "verified-email",
-                "schema_version": "1.2.3",
+                "schema_version": "1.2.4",
                 "attributes": ["email", "time"],
             }
             schema_response = requests.post(f"{AGENT_URL}/schemas", headers={"x-api-key": API_KEY}, json=schema_body)
