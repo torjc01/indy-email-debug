@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/CQEN-QDCE/exp-attestation-emploie-acces/prod/images/favicon.ico" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
     <title>British Columbia Email Verification Service</title>
     <meta
       name="description"
@@ -18,8 +18,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/css/bcgov_theme.min.css" />
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/css/app.css" />
+    <link rel="stylesheet" href="{% static 'css/bcgov_theme.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <script>
@@ -84,7 +84,7 @@
           <a class="navbar-brand" href="/">
             <img
               class="img-fluid d-none d-md-block"
-              src="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/images/bcid-logo-rev-en.svg"
+              src="/assets/images/bcid-logo-rev-en.svg"
               width="177"
               height="44"
               alt="B.C. Government Logo"
@@ -92,7 +92,7 @@
 
             <img
               class="img-fluid d-md-none"
-              src="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/images/bcid-symbol-rev.svg"
+              src="/assets/images/bcid-symbol-rev.svg"
               width="63"
               height="44"
               alt="B.C. Government Logo"
@@ -197,7 +197,7 @@
         </div>
       </nav>
     </footer>
-    <script src="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/js/bcgov_theme.min.js" async defer></script>
-    <script src="https://raw.githubusercontent.com/bcgov/indy-email-verification/master/src/assets/js/verify.js" async defer></script>
+    <script src="{% static 'js/bcgov_theme.min.js' %}" async defer></script>
+    <script src="{% static 'js/verify.js' %}" async defer></script>
   </body>
 </html>
