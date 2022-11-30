@@ -168,3 +168,7 @@ Temporary Items
 
 # repertoire des fichiers originaux 
 openshift/origine/*
+openshift/templates/postgresql/build.sh
+openshift/templates/postgresql/notas.md
+
+*.http

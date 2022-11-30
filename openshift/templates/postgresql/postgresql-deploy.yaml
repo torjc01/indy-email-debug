@@ -70,8 +70,8 @@ objects:
               - ${NAME}${SUFFIX}
             from:
               kind: ImageStreamTag
-              namespace: ${IMAGE_NAMESPACE}
-              name: ${SOURCE_IMAGE_NAME}:${TAG_NAME}
+              namespace: openshift
+              name: postgresql:latest
         - type: ConfigChange
       replicas: 1
       test: false
