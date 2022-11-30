@@ -60,12 +60,12 @@ def submit(request):
             email_html = template.render({"redirect_url": redirect_url}, request)
 
             send_mail(
-                "BC Email Verification Invite",
+                "Invitation du Service de Vérification de Courriel du CQEN",
                 (
                     "Follow this link to connect with our "
                     f"verification service: {redirect_url}"
                 ),
-                "Email Verification Service <ne-pas-repondre@asea.cqen.ca>",
+                "Service de Vérification de Courriel <ne-pas-repondre@asea.cqen.ca>",
                 [email],
                 fail_silently=False,
                 html_message=email_html,
@@ -222,3 +222,4 @@ def webhooks(request, topic):
 
     logger.warning(f"Webhook for topic {topic} and state {message['state']} is not implemented")
     return HttpResponse()
+    
